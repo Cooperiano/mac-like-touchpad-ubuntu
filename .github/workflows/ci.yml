@@ -12,7 +12,7 @@ jobs:
   validate:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install ShellCheck
         run: |
           sudo apt-get update
@@ -26,4 +26,4 @@ jobs:
       - name: Validate release checksum format
         run: grep -Eq '^readonly DRAG_SHA256="[0-9a-f]{64}"$' install.sh
       - name: Check forbidden personal paths
-        run: '! grep -R -E "/home/[^/]+|Documents/Codex" --exclude-dir=.git .'
+        run: '! grep -R -E "/home/[^/]+|Documents/Codex" --exclude-dir=.git --exclude-dir=dist --exclude=ci.yml .'

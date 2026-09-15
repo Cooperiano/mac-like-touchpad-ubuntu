@@ -11,7 +11,7 @@ jobs:
   build-release:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Select the pinned Rust toolchain
         run: |
           rustup toolchain install 1.98.1 --profile minimal
@@ -22,6 +22,8 @@ jobs:
         run: |
           git clone https://github.com/lmr97/linux-3-finger-drag.git upstream
           git -C upstream checkout --detach "$UPSTREAM_COMMIT"
+          export CARGO_INCREMENTAL=0 TZ=UTC LANG=C.UTF-8
+          export RUSTFLAGS="--remap-path-prefix=${CARGO_HOME:-$HOME/.cargo}=/cargo --remap-path-prefix=$GITHUB_WORKSPACE=/workspace"
           cargo test --manifest-path upstream/Cargo.toml --locked
           cargo build --manifest-path upstream/Cargo.toml --release --locked
           mkdir -p dist

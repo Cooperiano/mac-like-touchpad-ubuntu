@@ -4,7 +4,7 @@ set -Eeuo pipefail
 readonly PROJECT_REPOSITORY="Cooperiano/mac-like-touchpad-ubuntu"
 readonly PROJECT_VERSION="v0.1.0"
 readonly DRAG_ASSET="linux-3-finger-drag-x86_64"
-readonly DRAG_SHA256="5e13fdd5c6a30e034786819f943e71c9f2795ba2e0c6031eabed0f41f84496dc"
+readonly DRAG_SHA256="19629266b757c076bd025cd16f6385561bca61539d8fcdf2eb0ffd40168f101d"
 readonly DRAG_UPSTREAM_COMMIT="ae22defe47156e13476f08dce6cd98e5aaa49227"
 readonly EXTENSION_UUID="touchpad-gesture-customization@coooolapps.com"
 

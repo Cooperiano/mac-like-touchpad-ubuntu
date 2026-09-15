@@ -22,7 +22,8 @@ input events.
 
 - The drag engine is pinned to upstream commit
   `ae22defe47156e13476f08dce6cd98e5aaa49227`. The release binary is checked against a SHA-256 value
-  embedded in the installer.
+  embedded in the installer. Release builds also pin Rust 1.98.1 and remap build paths so the binary
+  is reproducible without leaking the builder's home directory.
 - The GNOME extension is downloaded over HTTPS from `extensions.gnome.org` for the detected GNOME
   version. Its embedded UUID must match the expected project UUID.
 

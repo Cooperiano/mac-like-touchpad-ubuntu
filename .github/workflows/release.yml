@@ -28,7 +28,7 @@ jobs:
           cargo build --manifest-path upstream/Cargo.toml --release --locked
           mkdir -p dist
           install -m 0755 upstream/target/release/linux-3-finger-drag dist/linux-3-finger-drag-x86_64
-          sha256sum dist/linux-3-finger-drag-x86_64 | tee dist/SHA256SUMS
+          (cd dist && sha256sum linux-3-finger-drag-x86_64 | tee SHA256SUMS)
       - name: Require installer checksum to match the release asset
         run: |
           expected="$(sed -n 's/^readonly DRAG_SHA256="\([0-9a-f]*\)"$/\1/p' install.sh)"

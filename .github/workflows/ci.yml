@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes shellcheck
+      - name: Validate shell syntax
+        run: bash -n install.sh status.sh uninstall.sh
+      - name: Run ShellCheck
+        run: shellcheck install.sh status.sh uninstall.sh
+      - name: Validate JSON
+        run: python3 -m json.tool assets/3fd-config.json >/dev/null
+      - name: Validate release checksum format
+        run: grep -Eq '^readonly DRAG_SHA256="[0-9a-f]{64}"$' install.sh
+      - name: Check forbidden personal paths
+        run: '! grep -R -E "/home/[^/]+|Documents/Codex" --exclude-dir=.git .'

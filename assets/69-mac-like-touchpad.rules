@@ -1,0 +1,4 @@
+# Grant the active desktop user access to touchpads and uinput only.
+# This deliberately avoids adding the user to the broad "input" group.
+ACTION=="add|change", SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_TOUCHPAD}=="1", TAG+="uaccess"
+ACTION=="add|change", SUBSYSTEM=="misc", KERNEL=="uinput", MODE="0660", TAG+="uaccess"

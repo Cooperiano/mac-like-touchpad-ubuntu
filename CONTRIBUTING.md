@@ -2,11 +2,11 @@
 
 Bug reports should include:
 
-- distribution and version;
-- GNOME version;
-- X11 or Wayland session;
-- touchpad name from `/proc/bus/input/devices`;
-- output from `./status.sh`;
+- operating system and version;
+- on Ubuntu: GNOME version, X11 or Wayland, touchpad name from `/proc/bus/input/devices`, and
+  output from `./status.sh`;
+- on Windows: laptop model, whether Settings identifies a Precision Touchpad, and output from
+  `.\windows\status.ps1`;
 - recent service logs, with private paths or usernames removed.
 
 Before opening a pull request:
@@ -15,6 +15,12 @@ Before opening a pull request:
 bash -n install.sh status.sh uninstall.sh
 shellcheck install.sh status.sh uninstall.sh
 python3 -m json.tool assets/3fd-config.json >/dev/null
+```
+
+On Windows, or in a Windows PowerShell CI environment:
+
+```powershell
+.\windows\test.ps1
 ```
 
 Changes to the pinned drag engine must update all of the following together:

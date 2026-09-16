@@ -128,7 +128,7 @@ configuration, touchpad preferences, and selected login session.
 ## Compatibility and limits
 
 - Tested design: Ubuntu 24.04, GNOME 46, Wayland, ELAN I²C-HID touchpad, hybrid Intel/NVIDIA GPU.
-- Release `v0.1.0` provides an x86-64 drag-engine binary.
+- Release `v0.2.0` provides an x86-64 drag-engine binary and the Windows profile scripts.
 - GNOME 45–48 is supported by the installer. Other desktops and GNOME releases are not yet tested.
 - This cannot reproduce Apple's haptic click, Force Touch hardware, or exact pointer acceleration.
 - Some legacy screen-capture, remote-control, automation, and global-hotkey tools behave
@@ -136,7 +136,7 @@ configuration, touchpad preferences, and selected login session.
 
 ## Supply chain and attribution
 
-The drag binary in release `v0.1.0` is built from upstream commit
+The drag binary in release `v0.2.0` is built from upstream commit
 `ae22defe47156e13476f08dce6cd98e5aaa49227` and checked against a SHA-256 value embedded in the
 installer. The GNOME extension is downloaded from `extensions.gnome.org` for the detected GNOME
 version and its UUID is verified before installation.

@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 
 readonly PROJECT_REPOSITORY="Cooperiano/mac-like-touchpad-ubuntu"
-readonly PROJECT_VERSION="v0.1.0"
+readonly PROJECT_VERSION="v0.2.0"
 readonly DRAG_ASSET="linux-3-finger-drag-x86_64"
 readonly DRAG_SHA256="19629266b757c076bd025cd16f6385561bca61539d8fcdf2eb0ffd40168f101d"
 readonly DRAG_UPSTREAM_COMMIT="ae22defe47156e13476f08dce6cd98e5aaa49227"
@@ -51,7 +51,7 @@ while (($#)); do
 done
 
 [[ $EUID -ne 0 ]] || die "run this script as your desktop user, not root"
-[[ $(uname -m) == "x86_64" ]] || die "v0.1.0 currently provides an x86_64 binary only"
+[[ $(uname -m) == "x86_64" ]] || die "v0.2.0 currently provides an x86_64 binary only"
 
 for command in curl gdbus gnome-extensions gnome-shell gsettings install python3 sha256sum sudo systemctl udevadm; do
   command -v "$command" >/dev/null || die "missing required command: $command"

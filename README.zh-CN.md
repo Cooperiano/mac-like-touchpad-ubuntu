@@ -124,7 +124,7 @@ systemctl --user stop three-finger-drag.service
 
 - 方案设计已在 Ubuntu 24.04、GNOME 46、Wayland、ELAN I²C-HID 触控板和 Intel/NVIDIA
   混合显卡环境中验证。
-- `v0.1.0` 暂时只提供 x86-64 二进制。
+- `v0.2.0` 提供 x86-64 拖动程序和 Windows 优化脚本。
 - 安装器支持 GNOME 45–48；其他桌面和 GNOME 版本尚未验证。
 - 无法复制苹果触控板的线性马达、压力感应和完全相同的指针加速曲线。
 - 某些老式录屏、远控、桌面自动化和全局快捷键工具在 Wayland 下行为不同；登录界面仍可
@@ -132,7 +132,7 @@ systemctl --user stop three-finger-drag.service
 
 ## 供应链与权限
 
-`v0.1.0` 的拖动程序固定来自上游提交
+`v0.2.0` 的拖动程序固定来自上游提交
 `ae22defe47156e13476f08dce6cd98e5aaa49227`，安装器会用内置 SHA-256 校验二进制。GNOME
 扩展按当前 GNOME 版本从 `extensions.gnome.org` 下载，并校验扩展 UUID。
 

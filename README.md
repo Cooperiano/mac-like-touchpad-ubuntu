@@ -1,8 +1,20 @@
-# Mac-like Touchpad for Ubuntu
+# Mac-like Touchpad for Ubuntu and Windows
 
 [简体中文](README.zh-CN.md) · [Zhihu article draft](docs/zhihu-article.md)
 
-A focused, auditable setup for the two gestures many macOS users miss on Ubuntu:
+A focused, auditable setup for the touchpad behaviors many macOS users miss on Ubuntu and Windows.
+
+| Platform | Three-finger drag | Four-finger desktops | Install |
+|---|---|---|---|
+| Ubuntu GNOME Wayland | Continuous, system-wide | Animated, system-native | `./install.sh` |
+| Windows Precision Touchpad (beta) | Tap-tap-drag fallback | System-native | `.\windows\install.ps1` |
+
+See the [Windows guide](windows/README.md) for the reversible Windows 10/11 optimization profile
+and the technical reason a normal background app cannot safely provide global three-finger drag.
+
+## Ubuntu
+
+The Ubuntu setup covers the two gestures many macOS users miss most:
 
 - three fingers drag windows, files, and text selections;
 - four fingers switch workspaces, navigate Overview, and reveal the desktop.

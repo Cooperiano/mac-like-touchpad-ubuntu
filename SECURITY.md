@@ -43,6 +43,11 @@ it stopped, disable it as well:
 systemctl --user disable --now three-finger-drag.service
 ```
 
+On Windows, the scripts change only documented values in the current user's Precision Touchpad
+registry key and do not request elevation. The first install backs up every affected value under
+`%LOCALAPPDATA%\MacLikeTouchpad`; `windows\uninstall.ps1` restores those values individually. The
+project does not install a driver, hook global input, or modify undocumented multi-finger settings.
+
 ## Reporting vulnerabilities
 
 Open a GitHub security advisory for this repository instead of publishing a vulnerability as a public

@@ -1,8 +1,20 @@
-# 在 Ubuntu 上实现接近 Mac 的触控板操作
+# 在 Ubuntu 和 Windows 上实现接近 Mac 的触控板操作
 
 [English](README.md) · [知乎文章稿](docs/zhihu-article.md)
 
-这是一套面向 Ubuntu GNOME 的完整组合方案，解决两个最明显的体验缺口：
+这是一套可审计、可恢复的 Ubuntu / Windows 触控板方案。
+
+| 平台 | 三指拖动 | 四指桌面手势 | 安装 |
+|---|---|---|---|
+| Ubuntu GNOME Wayland | 全局连续拖动 | 原生动画 | `./install.sh` |
+| Windows 精确式触摸板（Beta） | 轻触—轻触拖动替代 | 系统原生 | `.\windows\install.ps1` |
+
+Windows 10 / 11 的可恢复优化配置、安装方法和三指拖动的系统限制，见
+[Windows 中文说明](windows/README.zh-CN.md)。
+
+## Ubuntu
+
+Ubuntu GNOME 的完整组合方案解决两个最明显的体验缺口：
 
 - 三指直接拖动窗口、文件和选中文字；
 - 四指切换工作区、进入总览和显示桌面。

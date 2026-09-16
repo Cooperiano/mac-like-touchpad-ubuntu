@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  validate:
+  linux-validate:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
@@ -27,3 +27,11 @@ jobs:
         run: grep -Eq '^readonly DRAG_SHA256="[0-9a-f]{64}"$' install.sh
       - name: Check forbidden personal paths
         run: '! grep -R -E "/home/[^/]+|Documents/Codex" --exclude-dir=.git --exclude-dir=dist --exclude=ci.yml .'
+
+  windows-validate:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate PowerShell scripts and profile
+        shell: powershell
+        run: .\windows\test.ps1
